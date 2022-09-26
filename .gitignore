@@ -4,3 +4,4 @@ src/example_pyspark.egg-info
 metastore_db
 spark-warehouse
 derby.log
+.pytest_cache
