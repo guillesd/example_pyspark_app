@@ -21,4 +21,4 @@ jobs:
       - name: Install pyspark-app
         run: pip install e .
       - name: Run pytest
-        run: python -m pytest -vv
+        run: pytest -vv
