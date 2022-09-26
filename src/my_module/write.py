@@ -13,4 +13,4 @@ def write_results(df: DataFrame, output_table: str) -> None:
         Name of the output table to write the data to.
         If the table does not exist it will be created
     """
-    df.write.format("delta").mode("overwrite").saveAsTable("annual_increases")
+    df.write.format("delta").mode("overwrite").saveAsTable(output_table)

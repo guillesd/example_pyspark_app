@@ -36,8 +36,8 @@ def main(input_path: str):
     df = filter_logic(df)
     df = increase_salary(df)
 
-    # write your results to a permanent storage like BQ
-    write_results(df, "my_dataset.my_table")
+    # write your results to Delta
+    write_results(df, "annual_increases")
 
 
 if __name__ == "__main__":
