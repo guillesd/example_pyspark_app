@@ -1,7 +1,10 @@
 name: continuous-integration
-on: pull_request
+on: 
+  pull_request:
+    branches:
+      - main
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,7 +15,7 @@ jobs:
       # Run linter
       - name: Install Black
         run: pip install black
-      - name: Run black --check .
+      - name: Run black . --check
         run: black --check 
       # Run pytests
       - name: Install pyspark-app
