@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: 3.7
       # Run linter
-      - name: Install Black
+      - name: Install dev requirements
         run: pip install -r dev-requirements.txt
       - name: Run black in check mode
         run: black . --check 
@@ -21,4 +21,4 @@ jobs:
       - name: Install pyspark-app
         run: pip install e .
       - name: Run pytest
-        run: pytest
+        run: python -m pytest -vv

@@ -35,4 +35,4 @@ def increase_salary(df: DataFrame) -> DataFrame:
     pyspark.sql.DataFrame
         A DataFrame without added column new_annual_salary
     """
-    return df.withColumn(colName="new_annual_salary", col=col("anual_salary") + 100000)
+    return df.withColumn(colName="new_annual_salary", col=col("annual_salary") + 100000)

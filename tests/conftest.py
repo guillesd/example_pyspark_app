@@ -23,7 +23,11 @@ def spark() -> SparkSession:
 def sample_df(spark: SparkSession) -> DataFrame:
     return spark.createDataFrame(
         [
-            {"worker_id": 8, "worker_name": "Guillermo Sanchez", "anual_salary": 80000},
-            {"worker_id": 9, "worker_name": "Jeff Bezos", "anual_salary": 50000000000},
+            {
+                "worker_id": 8,
+                "worker_name": "Guillermo Sanchez",
+                "annual_salary": 80000,
+            },
+            {"worker_id": 9, "worker_name": "Jeff Bezos", "annual_salary": 50000000000},
         ]
     )
