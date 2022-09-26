@@ -14,7 +14,7 @@ jobs:
           python-version: 3.7
       # Run linter
       - name: Install Black
-        run: pip install black
+        run: pip install -r dev-requirements.txt
       - name: Run black in check mode
         run: black . --check 
       # Run pytests

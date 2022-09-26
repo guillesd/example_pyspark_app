@@ -1,0 +1,7 @@
+pytest-runner
+pytest>=5.4.1 
+pyspark-test
+pre-commit>=2.19.0
+flake8>=4.0.0
+black>=22.3.0
+bump2version
