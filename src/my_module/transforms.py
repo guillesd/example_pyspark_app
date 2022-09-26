@@ -1,6 +1,7 @@
 from pyspark.sql import DataFrame
 from pyspark.sql.functions import col
 
+
 def filter_logic(df: DataFrame) -> DataFrame:
     """
     Given a DataFrame with salary information, this function returns filtered salaries
@@ -16,11 +17,12 @@ def filter_logic(df: DataFrame) -> DataFrame:
     pyspark.sql.DataFrame
         A DataFrame without the filtered records
     """
-    return df.filter(col('annual_salary') > 100000)
+    return df.filter(col("annual_salary") > 100000)
+
 
 def increase_salary(df: DataFrame) -> DataFrame:
     """
-    Given a DataFrame with salary information, this function adds a column with 
+    Given a DataFrame with salary information, this function adds a column with
     the salary increases by summing 100000$ to the current salary.
 
     Parameters
@@ -33,4 +35,4 @@ def increase_salary(df: DataFrame) -> DataFrame:
     pyspark.sql.DataFrame
         A DataFrame without added column new_annual_salary
     """
-    return df.withColumn(colName='new_annual_salary', col=col('anual_salary')+100000)
+    return df.withColumn(colName="new_annual_salary", col=col("anual_salary") + 100000)

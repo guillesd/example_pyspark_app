@@ -1,5 +1,6 @@
 from pyspark.sql import SparkSession, DataFrame
 
+
 def read_some_file(path: str, spark: SparkSession) -> DataFrame:
     """
     Given a path it reads a csv file with a specific set of options.
@@ -9,7 +10,7 @@ def read_some_file(path: str, spark: SparkSession) -> DataFrame:
     path : str
         Path to the file (either local or s3)
     spark : pyspark.sql.SparkSession
-        Spark session (either local or remote) 
+        Spark session (either local or remote)
 
     Returns
     -------

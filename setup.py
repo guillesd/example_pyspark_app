@@ -1,9 +1,7 @@
 from setuptools import setup, find_packages
 
 
-requirements = [
-    "pyspark>=3.0.0"
-]
+requirements = ["pyspark>=3.0.0"]
 setup_requirements = ["pytest-runner"]
 tests_requirements = ["pytest>=5.4.1", "pyspark-test"]
 dev_requirements = [
