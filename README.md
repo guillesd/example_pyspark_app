@@ -13,17 +13,19 @@ The main goal of this repository is to provide an example of a PySpark applicati
 ## Development
 
 Install the package in edit mode:
-```
+```bash
 pip install -e .
 ```
-This will install all requirements (not much). If pinned versions of certain dependencies are needed for development, add a `requirements.txt` file or consider using other package managers such as Poetry or Flit.
-
-To run unit tests, run the following command:
+To install all needed dev requirements, run the following command:
+```bash
+pip install -r dev-requirements.txt
 ```
+To run unit tests, run the following command:
+```bash
 pytest
 ```
 
 To keep your code formatted on every commit, please run the following:
-```
+```bash
 pre-commit install
 ```
