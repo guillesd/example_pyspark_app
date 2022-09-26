@@ -10,7 +10,7 @@ BUILDER = SparkSession.builder.appName("simpleETL") \
     .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
 
 def main():
-    """Runs the simple ETL"""
+    """Runs the simple end-to-end ETL"""
     spark = configure_spark_with_delta_pip(BUILDER).getOrCreate() # here you can configure spark as you wish
     
     # read files or load any configs
