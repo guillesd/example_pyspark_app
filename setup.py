@@ -9,6 +9,7 @@ dev_requirements = [
     "flake8>=4.0.0",
     "black>=22.3.0",
     "bump2version",
+    "wheel",
 ] + tests_requirements
 extras_requirements = {"dev": dev_requirements}
 setup(
