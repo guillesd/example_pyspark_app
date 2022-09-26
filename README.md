@@ -25,6 +25,11 @@ To run unit tests, run the following command:
 pytest
 ```
 
+To run the etl entypoint script locally (or remotely) the command should contain the --input-path arg, like so:
+```bash
+python src/my_module/scripts/etl.py --input-path=./data/sample.csv
+```
+
 To keep your code formatted on every commit, please run the following:
 ```bash
 pre-commit install

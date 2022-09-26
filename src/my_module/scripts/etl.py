@@ -4,6 +4,7 @@ from my_module.write import write_results
 
 from pyspark.sql import SparkSession
 from delta import configure_spark_with_delta_pip
+from argparse import ArgumentParser
 
 BUILDER = (
     SparkSession.builder.appName("simpleETL")
@@ -15,14 +16,21 @@ BUILDER = (
 )
 
 
-def main():
-    """Runs the simple end-to-end ETL"""
+def main(input_path: str):
+    """
+    Runs the simple end-to-end ETL
+
+    Parameters
+    ----------
+    input_path : str
+        Input path of data file to read
+    """
     spark = configure_spark_with_delta_pip(
         BUILDER
     ).getOrCreate()  # here you can configure spark as you wish
 
     # read files or load any configs
-    df = read_some_file("./data/sample.csv", spark)
+    df = read_some_file(input_path, spark)
 
     # apply your business logic
     df = filter_logic(df)
@@ -33,4 +41,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = ArgumentParser(description="Provide input for the ETL application")
+    parser.add_argument(
+        "--input-path", dest="input_path", help="input path of the data file"
+    )
+    args = parser.parse_args()
+    main(args.input_path)
