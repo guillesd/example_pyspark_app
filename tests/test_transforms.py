@@ -7,7 +7,7 @@ from pyspark_test import assert_pyspark_df_equal
 def test_filter_logic(sample_df: DataFrame, spark: SparkSession):
     filtered_df = filter_logic(sample_df)
     expected_output = spark.createDataFrame(
-        [{"worker_id": 9, "worker_name": "Jeff Bezos", "anual_salary": 50000000000}]
+        [{"worker_id": 9, "worker_name": "Jeff Bezos", "annual_salary": 50000000000}]
     )
 
     assert_pyspark_df_equal(filtered_df, expected_output)
@@ -20,14 +20,14 @@ def test_increase_salary(sample_df: DataFrame, spark: SparkSession):
             {
                 "worker_id": 8,
                 "worker_name": "Guillermo Sanchez",
-                "anual_salary": 80000,
-                "new_anual_salary": 180000,
+                "annual_salary": 80000,
+                "new_annual_salary": 180000,
             },
             {
                 "worker_id": 9,
                 "worker_name": "Jeff Bezos",
-                "anual_salary": 50000000000,
-                "new_anual_salary": 50000100000,
+                "annual_salary": 50000000000,
+                "new_annual_salary": 50000100000,
             },
         ]
     )
@@ -45,8 +45,8 @@ def test_e2e_transform(sample_df: DataFrame, spark: SparkSession):
             {
                 "worker_id": 9,
                 "worker_name": "Jeff Bezos",
-                "anual_salary": 50000000000,
-                "new_anual_salary": 50000100000,
+                "annual_salary": 50000000000,
+                "new_annual_salary": 50000100000,
             }
         ]
     )
