@@ -25,5 +25,5 @@ setup(
     setup_requires=setup_requirements,
     tests_require=tests_requirements,
     extras_require=extras_requirements,
-    entry_points={"etl = my_module.scripts.etl:entrypoint"},
+    entry_points={"console_scripts": ["etl = my_module.scripts.etl:entrypoint"]},
 )
