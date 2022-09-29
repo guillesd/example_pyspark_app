@@ -10,6 +10,9 @@ custom:
       num_workers: 1
       node_type_id: "<some-node-type-id" # this value will be different depending on your cloud provider
 
+build:
+  python: "pip"
+
 environments:
   default:
     workflows:
