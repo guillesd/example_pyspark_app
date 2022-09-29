@@ -1,15 +1,14 @@
 from setuptools import setup, find_packages
 
 
-requirements = ["pyspark>=3.0.0", "delta-spark==2.1.0"]
+requirements = ["pyspark==3.3.0", "delta-spark==2.1.0"]
 setup_requirements = ["pytest-runner"]
 tests_requirements = ["pytest>=5.4.1", "pyspark-test"]
 dev_requirements = [
     "pre-commit>=2.19.0",
     "flake8>=4.0.0",
     "black>=22.3.0",
-    "bump2version",
-    "wheel",
+    "wheel==0.35.1",
 ] + tests_requirements
 extras_requirements = {"dev": dev_requirements}
 setup(
