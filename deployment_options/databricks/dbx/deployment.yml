@@ -1,0 +1,27 @@
+# Custom section is used to store configurations that might be repetative.
+# Please read YAML documentation for details on how to use substitutions and anchors.
+custom:
+  basic-cluster-props: &basic-cluster-props
+    spark_version: "10.4.x-cpu-ml-scala2.12"
+
+  basic-static-cluster: &basic-static-cluster
+    new_cluster:
+      <<: *basic-cluster-props
+      num_workers: 1
+      node_type_id: "<some-node-type-id" # this value will be different depending on your cloud provider
+
+environments:
+  default:
+    workflows:
+      #######################################################################################
+      # this is an example job with single ETL task based on 2.1 API and wheel_task format #
+      ######################################################################################
+      - name: "awesome-etl"
+        tasks:
+          - task_key: "main"
+            <<: *basic-static-cluster
+            python_wheel_task:
+              package_name: "my_module"
+              entry_point: "etl" # take a look at the setup.py entry_points section for details on how to define an entrypoint
+              parameters: 
+                input-path: s3://some-bucket/file.csv
